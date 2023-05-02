@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.categories-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  
+}
+
+.category-container {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.category-body-container {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
