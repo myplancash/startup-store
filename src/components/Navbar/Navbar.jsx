@@ -18,20 +18,20 @@ const Navbar = () => {
           <StoreLogo/>
         </LogoContainer>
         <NavMenu>
-          <NavLink to='/shop' activeStyle>
+          <NavLink to='/shop' activestyle='true'>
             Shop
           </NavLink>
-          <NavLink to='/events' activeStyle>
+          <NavLink to='/events' activestyle='true'>
             Blog
           </NavLink>
-          <NavLink to='/annual' activeStyle>
+          <NavLink to='/annual' activestyle='true'>
             Contact
           </NavLink>
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to='/signin'>Sign In</NavBtnLink>
+          <NavBtnLink to='/sign-in'>Sign In</NavBtnLink>
         </NavBtn>
       </Nav>
       <Outlet />
