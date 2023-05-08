@@ -32,7 +32,7 @@ const Navbar = () => {
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to='/sign-in'>Sign In</NavBtnLink>
+          <NavBtnLink to='/auth'>Sign In</NavBtnLink>
         </NavBtn>
       </Nav>
       <Outlet />
