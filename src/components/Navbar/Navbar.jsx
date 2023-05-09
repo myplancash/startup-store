@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import {
   Nav,
   NavLink,
@@ -8,9 +9,19 @@ import {
 } from './Navbar.styles';
 import { Outlet } from 'react-router-dom';
 import {ReactComponent as StoreLogo } from '../../assets/crown.svg'
+import { UserContext } from '../../contexts/user.context';
+import { signOutUser } from '../../utils/firebase/firebase.utils';
 
   
 const Navbar = () => {
+  const { currentUser, setCurrentUser } = useContext(UserContext)
+  console.log(currentUser)
+
+  const signOutHandler = async () => {
+    await signOutUser()
+    setCurrentUser(null)
+  }
+
   return (
     <>
       <Nav>
@@ -31,9 +42,15 @@ const Navbar = () => {
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
+        { currentUser ? (
+          <NavBtn>
+          <NavBtnLink onClick={signOutHandler}>Sign Out</NavBtnLink>
+        </NavBtn>
+        ) : (
         <NavBtn>
           <NavBtnLink to='/auth'>Sign In</NavBtnLink>
         </NavBtn>
+        )}
       </Nav>
       <Outlet />
     </>
