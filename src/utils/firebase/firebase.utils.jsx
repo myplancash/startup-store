@@ -8,6 +8,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
 } from 'firebase/auth'
 
 import {getFirestore, doc, getDoc, setDoc} from 'firebase/firestore';
@@ -81,4 +82,9 @@ export const signInAuthWithEmailAndPassword = async (email, password) => {
 
 export const signOutUser = async () => {
   return await signOut(auth)
+}
+
+
+export const onAuthListenStateChanged = async (callback) => {
+  return await onAuthStateChanged(auth, callback)
 }
