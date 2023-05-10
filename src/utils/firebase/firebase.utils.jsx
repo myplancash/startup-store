@@ -39,10 +39,12 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googlePro
 export const db = getFirestore()
 
 export const createUserDocumentFromAuth = async (userAuth, additionalInfo = {}) => {
+  if(!userAuth) return
 
   const userDocRef = doc(db, 'users', userAuth.uid)
   const userSnapshot = await getDoc(userDocRef)
 
+  console.log(userAuth)
   console.log(userSnapshot)
   console.log(userSnapshot.exists())
   
@@ -56,7 +58,7 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInfo = {}) 
         displayName,
         email,
         createdAt,
-        ...additionalInfo
+        ...additionalInfo,
       })
     } catch(error) {
       if(error.code === 'auth/email-already-in-use') {
@@ -71,18 +73,18 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInfo = {}) 
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if(!email || !password) return
-  await createUserWithEmailAndPassword(auth, email, password)
+  return await createUserWithEmailAndPassword(auth, email, password)
 }
 
 export const signInAuthWithEmailAndPassword = async (email, password) => {
   if(!email || !password) return
-  await signInWithEmailAndPassword(auth, email, password)
+  return await signInWithEmailAndPassword(auth, email, password)
 }
 
 export const signOutUser = async () => {
   await signOut(auth)
 }
 
-export const onAuthStateChangedListener = async (callback) => {
-  await onAuthStateChanged(auth, callback)
+export const onAuthStateChangedListener = (callback) => {
+  onAuthStateChanged(auth, callback)
 }

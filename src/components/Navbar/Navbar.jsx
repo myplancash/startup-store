@@ -43,12 +43,12 @@ const Navbar = () => {
         </NavMenu>
         { currentUser ? (
           <NavBtn>
-          <NavBtnLink onClick={signOutUser}>{' '}Sign Out{' '}</NavBtnLink>
-        </NavBtn>
+            <NavBtnLink onClick={signOutUser}>Sign Out</NavBtnLink>
+          </NavBtn>
         ) : (
-        <NavBtn>
-          <NavBtnLink to='/auth'>Sign In</NavBtnLink>
-        </NavBtn>
+          <NavBtn>
+            <NavBtnLink to='/auth'>Sign In</NavBtnLink>
+          </NavBtn>
         )}
       </Nav>
       <Outlet />

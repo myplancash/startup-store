@@ -22,7 +22,7 @@ function Home() {
   },
   {
     "id": 4,
-    "title": "outfits",
+    "title": "mens",
     "imageUrl": "https://i.ibb.co/ZG9Gw37/mens.jpg"
   },
   {
