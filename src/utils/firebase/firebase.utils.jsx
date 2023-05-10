@@ -69,22 +69,20 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInfo = {}) 
   return userDocRef;
 }
 
-
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if(!email || !password) return
-  return await createUserWithEmailAndPassword(auth, email, password)
+  await createUserWithEmailAndPassword(auth, email, password)
 }
 
 export const signInAuthWithEmailAndPassword = async (email, password) => {
   if(!email || !password) return
-  return await signInWithEmailAndPassword(auth, email, password)
+  await signInWithEmailAndPassword(auth, email, password)
 }
 
 export const signOutUser = async () => {
-  return await signOut(auth)
+  await signOut(auth)
 }
 
-
-export const onAuthListenStateChanged = async (callback) => {
-  return await onAuthStateChanged(auth, callback)
+export const onAuthStateChangedListener = async (callback) => {
+  await onAuthStateChanged(auth, callback)
 }

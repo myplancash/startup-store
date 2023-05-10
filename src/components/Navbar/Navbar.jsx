@@ -14,13 +14,12 @@ import { signOutUser } from '../../utils/firebase/firebase.utils';
 
   
 const Navbar = () => {
-  const { currentUser, setCurrentUser } = useContext(UserContext)
-  console.log(currentUser)
+  const { currentUser } = useContext(UserContext)
 
-  const signOutHandler = async () => {
+  /* const signOutHandler = async () => {
+    // onAuthStateChangedListener is going to catch it, so we do not need to: setCurrentUser(null)
     await signOutUser()
-    setCurrentUser(null)
-  }
+   }*/
 
   return (
     <>
@@ -44,7 +43,7 @@ const Navbar = () => {
         </NavMenu>
         { currentUser ? (
           <NavBtn>
-          <NavBtnLink onClick={signOutHandler}>Sign Out</NavBtnLink>
+          <NavBtnLink onClick={signOutUser}>{' '}Sign Out{' '}</NavBtnLink>
         </NavBtn>
         ) : (
         <NavBtn>
