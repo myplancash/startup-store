@@ -2,12 +2,7 @@ import Home from './routes/home/Home';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Authentication from './routes/authentication/authentication';
-
-function Shop() {
-  return (
-    <h1>Hello from show component</h1>
-  )
-}
+import Shop from './routes/shop/Shop';
 
 function App() {
   return (

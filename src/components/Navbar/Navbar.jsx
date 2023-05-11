@@ -11,7 +11,8 @@ import { Outlet } from 'react-router-dom';
 import {ReactComponent as StoreLogo } from '../../assets/crown.svg'
 import { UserContext } from '../../contexts/user.context';
 import { signOutUser } from '../../utils/firebase/firebase.utils';
-
+import CartIcon from '../CartIcon/CartIcon';
+import CartDropdown from '../CartDropdown/CartDropdown';
   
 const Navbar = () => {
   const { currentUser } = useContext(UserContext)
@@ -40,16 +41,18 @@ const Navbar = () => {
           
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+          { currentUser ? (
+            <NavBtn>
+              <NavBtnLink onClick={signOutUser}>Sign Out</NavBtnLink>
+            </NavBtn>
+          ) : (
+            <NavBtn>
+              <NavBtnLink to='/auth'>Sign In</NavBtnLink>
+            </NavBtn>
+          )}
+          <CartIcon />
         </NavMenu>
-        { currentUser ? (
-          <NavBtn>
-            <NavBtnLink onClick={signOutUser}>Sign Out</NavBtnLink>
-          </NavBtn>
-        ) : (
-          <NavBtn>
-            <NavBtnLink to='/auth'>Sign In</NavBtnLink>
-          </NavBtn>
-        )}
+        <CartDropdown />
       </Nav>
       <Outlet />
     </>
