@@ -3,34 +3,35 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav` 
   height: 70px;
-  border: 1px solid #070606;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
-  
+
+  border: 1px solid #070606;
   background: #fefefe;
   padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
-  /* Third Nav */
-  /* justify-content: flex-start; */
 `;
 
 export const LogoContainer = styled(Link)`
+  height: 70px;
+  padding: 25px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 90px;
-  padding: 25px;
-  cursor: pointer;
-  
+
   &:first-child {
-    align-self:center;    
+    align-self:center;   
   }
   
 `
 
 export const NavLink = styled(Link)` 
+  width: 50%;
+  justify-content: flex-end;
+
   color: #808080;
   display: flex;
   align-items: center;
@@ -50,6 +51,10 @@ export const NavLink = styled(Link)`
     color: #070606;
   }
 `;
+
+export const Authentication = styled(NavLink)`
+  font-weight: bold;
+`
 /* 
 export const Bars=styled(FaBars)` 
   display: none;
@@ -68,9 +73,9 @@ export const Bars=styled(FaBars)`
 
 export const NavMenu=styled.div` 
   width: 50%;
-  height: 100%;;
+  height: 100%;
   display: flex;
-  justify-content: flex-end;
+
   align-items: center;
   margin-right: -24px;
 
@@ -100,7 +105,6 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink=styled(Link)` 
   border-radius: 4px;
-  color: #3992ff;
   font-weight: 500;
   align-self: center;
   background: #808080;
@@ -114,7 +118,7 @@ export const NavBtnLink=styled(Link)`
   /* Second Nav */
   margin-left: 24px;
 
-   font-size: 1rem;
+  font-size: .8rem;
   font-family: inherit;
   border: none;
   border-radius: 8px;

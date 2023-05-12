@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import {
   Nav,
   NavLink,
@@ -6,6 +6,7 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink,
+  Authentication
 } from './Navbar.styles';
 import { Outlet } from 'react-router-dom';
 import {ReactComponent as StoreLogo } from '../../assets/crown.svg'
@@ -18,9 +19,7 @@ import CartDropdown from '../CartDropdown/CartDropdown';
   
 const Navbar = () => {
   const { currentUser } = useContext(UserContext)
-  const {isCartOpen} = useContext(CartContext)
-
-
+  const { isCartOpen } = useContext(CartContext)
   /* const signOutHandler = async () => {
     // onAuthStateChangedListener is going to catch it, so we do not need to: setCurrentUser(null)
     await signOutUser()
@@ -42,18 +41,17 @@ const Navbar = () => {
           <NavLink to='/annual' activestyle='true'>
             Contact
           </NavLink>
-          
-          {/* Second Nav */}
-          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+          <Authentication >
           { currentUser ? (
-            <NavBtn>
-              <NavBtnLink onClick={signOutUser}>Sign Out</NavBtnLink>
-            </NavBtn>
+            <NavLink onClick={signOutUser}>
+              Sign Out
+            </NavLink>
           ) : (
-            <NavBtn>
-              <NavBtnLink to='/auth'>Sign In</NavBtnLink>
-            </NavBtn>
+            <NavLink to='/auth'>
+              Sign In
+            </NavLink>
           )}
+          </Authentication>
           <CartIcon />
         </NavMenu>
         { isCartOpen && <CartDropdown />}
