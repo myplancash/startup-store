@@ -29,11 +29,10 @@ export const LogoContainer = styled(Link)`
 `
 
 export const NavLink = styled(Link)` 
-  width: 50%;
   justify-content: flex-end;
-
   color: #808080;
   display: flex;
+  font-size: 1rem;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
@@ -54,6 +53,7 @@ export const NavLink = styled(Link)`
 
 export const Authentication = styled(NavLink)`
   font-weight: bold;
+  width: 60%;
 `
 /* 
 export const Bars=styled(FaBars)` 

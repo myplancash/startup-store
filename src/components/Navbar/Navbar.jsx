@@ -41,7 +41,7 @@ const Navbar = () => {
           <NavLink to='/annual' activestyle='true'>
             Contact
           </NavLink>
-          <Authentication >
+          <Authentication>
           { currentUser ? (
             <NavLink onClick={signOutUser}>
               Sign Out
