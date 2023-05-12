@@ -11,11 +11,15 @@ import { Outlet } from 'react-router-dom';
 import {ReactComponent as StoreLogo } from '../../assets/crown.svg'
 import { UserContext } from '../../contexts/user.context';
 import { signOutUser } from '../../utils/firebase/firebase.utils';
+import { CartContext }from '../../contexts/cart.context';
+
 import CartIcon from '../CartIcon/CartIcon';
 import CartDropdown from '../CartDropdown/CartDropdown';
   
 const Navbar = () => {
   const { currentUser } = useContext(UserContext)
+  const {isCartOpen} = useContext(CartContext)
+
 
   /* const signOutHandler = async () => {
     // onAuthStateChangedListener is going to catch it, so we do not need to: setCurrentUser(null)
@@ -52,7 +56,7 @@ const Navbar = () => {
           )}
           <CartIcon />
         </NavMenu>
-        <CartDropdown />
+        { isCartOpen && <CartDropdown />}
       </Nav>
       <Outlet />
     </>
