@@ -7,7 +7,7 @@ import './CartDropdown.styles.scss';
 
 const CartDropdown = () => {
 
-  const {cartItems, calculateTotal} = useContext(CartContext)
+  const {cartItems} = useContext(CartContext)
   return (
     <div className='cart-dropdown-container'>
       <div className='cart-items'>
