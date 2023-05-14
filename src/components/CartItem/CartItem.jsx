@@ -1,12 +1,18 @@
-import React from 'react'
+import { useContext } from 'react'
+import './CartItem.scss';
+import { CartContext } from '../../contexts/cart.context';
 
 const CartItem = ({ cartItem }) => {
-  const { name, quantity } = cartItem;
-
+  const { name, imageUrl } = cartItem;
+  const {totalAmount} = useContext(CartContext)
+  
   return (
     <div className='cart-item-container'>
-      <h2 className='cart-item'>{name}</h2>
-      <span className='cart-quantity'>{quantity}</span>
+      <img src={imageUrl} alt={`${name}`} />
+      <div className='item-details'>
+        <h2 className='name'>{name}</h2>
+        <span className='quantity'>{totalAmount}</span>
+      </div>
     </div>
   )
 }

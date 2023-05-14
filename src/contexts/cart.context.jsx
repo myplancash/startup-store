@@ -5,31 +5,53 @@ export const CartContext = createContext({
   setIsCartOpen: () => {},
   cartItems: [],
   addItemToCart: () => {},
+  totalAmount: 0,
+  calculateTotal: () => {},
 })
 
-
 const addCartItem = (cartItems, productToAdd) => {
-  //Find if cart items contains productToAdd
-  const existingCardItem = cartItems.find((item) => item.id === productToAdd.id)
+  const existingCartItems = cartItems.find(cartItem => cartItem.id === productToAdd.id)
 
-  //if found increment quantity
-  if(existingCardItem) {
-    return cartItems.map((item) => item.id === productToAdd.id ? {...item, quantity: item.quantity + 1} : item)
+  if(existingCartItems) {
+    return cartItems.map((cartItem) =>
+      cartItem.id === productToAdd.id 
+      ? {...cartItem, quantity: cartItem.quantity + 1} 
+      : cartItem
+    )
   }
 
-  //return new array with modified cartItems, new cartitem
   return [...cartItems, {...productToAdd, quantity: 1}]
+}
+
+const total = (cartItems) => {
+  const total = cartItems.reduce((acc, curr) => {
+    const cost = acc.prsice * curr.quantity
+    return cost;
+  }, {})
+
+  return total;
 }
 
 export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [cartItems, setCartItems] = useState([])
+  const [totalAmount, setTotalAmount ] = useState(0)
 
+  const addItemToCart = (productToAdd) => {
+    setCartItems(addCartItem(cartItems, productToAdd))
+  }
 
-  const addItemToCart = (productToAdd) => { 
-    setCartItems(addCartItem(productToAdd))
+  const calculateTotal = (cartItems) => {
+    setTotalAmount(total(cartItems))
   }
   
-  const value = { isCartOpen, setIsCartOpen }
+  const value = { 
+    isCartOpen, 
+    setIsCartOpen, 
+    cartItems, 
+    addItemToCart,
+    totalAmount,
+    calculateTotal,
+  }
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }
