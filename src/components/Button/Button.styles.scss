@@ -1,4 +1,5 @@
 .button-container {
+  text-decoration: none;
   min-width: 165px;
   width: auto;
   height: 50px;
@@ -17,8 +18,15 @@
 
   &:hover {
     background-color: white;
-    color: black;
+    color:#070606;
     border: 1px solid black;
+  }
+  &:link {
+    color: #fafafa;
+  }
+  
+  &:visited {
+    color: #0000ff;
   }
 
   &.google-sign-in {
@@ -32,8 +40,8 @@
   }
 
   &.inverted {
-    background-color: white;
-    color: black;
+    background-color:white;
+    color: #070606;
     border: 1px solid black;
 
     &:hover {

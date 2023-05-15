@@ -32,7 +32,7 @@ export const NavLink = styled(Link)`
   justify-content: flex-end;
   color: #808080;
   display: flex;
-  font-size: 1rem;
+  font-size: .9rem;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
@@ -53,7 +53,7 @@ export const NavLink = styled(Link)`
 
 export const Authentication = styled(NavLink)`
   font-weight: bold;
-  width: 60%;
+  text-transform: uppercase;
 `
 /* 
 export const Bars=styled(FaBars)` 
