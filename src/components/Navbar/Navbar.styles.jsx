@@ -51,7 +51,7 @@ export const NavLink = styled(Link)`
   }
 `;
 
-export const Authentication = styled(NavLink)`
+export const Authentication = styled.div`
   font-weight: bold;
   text-transform: uppercase;
 `
