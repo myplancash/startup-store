@@ -51,8 +51,7 @@ export const addCollectionAndDocuments = async(collectionKey, objectsToAdd) => {
   console.log('done')
 }
 
-
-export const getCategoriesAndDocuments = async() => {
+export const getCategoriesAndDocuments = async () => {
   const collectionRef = collection(db, 'categories')
   const q = query(collectionRef)
   const querySnapshot = await getDocs(q)
@@ -62,7 +61,7 @@ export const getCategoriesAndDocuments = async() => {
     acc[title.toLowerCase()] = items;
     return acc;
   }, {})
-  
+
   return categoryMap;
 }
 

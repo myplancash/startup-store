@@ -5,8 +5,7 @@ const SHOP_DATA = [
       {
         id: 1,
         name: 'Brown Brim',
-        imageUrl: "https://i.ibb.co/6PtbMNJ/hat-1.jpg",
-        price: 25,
+        imageUrl: "https://i.ibb.co/cyMmD2J/hat-5.jpg",        price: 25,
       },
       {
         id: 2,
@@ -29,7 +28,7 @@ const SHOP_DATA = [
       {
         id: 5,
         name: 'Green Beanie',
-        imageUrl: "https://i.ibb.co/6PtbMNJ/hat-1.jpg",
+        imageUrl: "https://i.ibb.co/h2hJPvp/hat-1.jpg",
         price: 18,
       },
       {
