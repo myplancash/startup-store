@@ -1,0 +1,28 @@
+.category-preview-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  padding: 1rem;
+  gap: 1rem;
+  border: 1px solid #070606;
+  &:hover {
+    width: 100%;
+    border-radius: 0;
+    border-bottom: 1px solid #808080;
+    box-shadow: 0 7px 30px -10px rgba(0, 0, 0, 0.3);
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    cursor: pointer;
+  }
+
+  .preview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+  }
+}
