@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <>
       <Nav>
-        <LogoContainer to='/home'>
+        <LogoContainer to='/'>
           <StoreLogo/>
         </LogoContainer>
         <NavMenu>

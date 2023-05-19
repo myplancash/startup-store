@@ -6,11 +6,9 @@ import { CartContext } from '../../contexts/cart.context';
 const ProductCard = ({ product }) => {
 
   const { addItemToCart } = useContext(CartContext)
-  const { name, imageUrl, price, quantity } = product;
+  const { name, imageUrl, price } = product;
 
-  const addProductToCart = () => {
-    addItemToCart(product)
-  }
+  const addProductToCart = () => addItemToCart(product)
 
   return (
     <div className='product-card-container'>
@@ -19,7 +17,7 @@ const ProductCard = ({ product }) => {
         <span className='name'>{name}</span>
         <span className='price'>${price}</span>
       </div>
-      <Button onClick={addProductToCart} buttonClass='inverted' type='button'>Add to Cart</Button>
+      <Button onClick={addProductToCart} buttonClass='inverted'>Add to Cart</Button>
     </div>
   )
 }
