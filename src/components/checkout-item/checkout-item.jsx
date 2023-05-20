@@ -24,14 +24,16 @@ const CheckoutItem = ({cartItem}) => {
       <div className='image-container'>
         <img src={imageUrl} alt={`${name}`} />
       </div>
-      <span className='name'>{name}</span>
-      <span className='quantity'>
-        <span className='arrow' onClick={removeItemHandler}>&lt;</span>
-        {quantity}
-        <span className='arrow' onClick={addItemHandler}>&gt;</span>
-      </span>
-      <span className='price'>${price * quantity}</span>
-      <span onClick={clearItemHandler} className='remove-button'>&#10005;</span>
+      <div className='checkout-item-details'>
+        <span className='name'>{name}</span>
+        <span className='quantity'>
+         <span className='arrow' onClick={removeItemHandler}>&lt;</span>
+          {quantity}
+          <span className='arrow' onClick={addItemHandler}>&gt;</span>
+        </span>
+        <span className='price'>${price * quantity}</span>
+        <span onClick={clearItemHandler} className='remove-button'>&#10005;</span>
+      </div>
     </div>
   )
 }
