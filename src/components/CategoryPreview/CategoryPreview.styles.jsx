@@ -6,19 +6,17 @@ export const CategoryPreviewContainer = styled(Link)`
   flex-direction: column;
   margin-bottom: 30px;
   padding: 1rem 2rem;
-
+/* 
   &:hover {
-    /* box-shadow: 0px 15px 20px rgba(7,6,6, 0.4);
-    color: #fff;
-    transform: translateY(-7px); */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  }
-`
+  } */
+` 
 
 export const Title = styled(Link)`
   font-size: 2rem;
   margin-bottom: 25px;
   cursor: pointer;
+  display: block;
 `
 
 export const Preview = styled.div`
