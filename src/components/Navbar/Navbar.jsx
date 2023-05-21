@@ -1,11 +1,9 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext } from 'react';
 import {
   NavContainer,
   NavLink,
   LogoContainer,
   NavMenu,
-  NavBtn,
-  NavBtnLink,
   Authentication
 } from './Navbar.styles';
 import { Outlet } from 'react-router-dom';

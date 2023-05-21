@@ -5,7 +5,7 @@ export const CategoryPreviewContainer = styled(Link)`
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
-  padding: 2rem;
+  padding: 1rem 2rem;
 
   &:hover {
     /* box-shadow: 0px 15px 20px rgba(7,6,6, 0.4);

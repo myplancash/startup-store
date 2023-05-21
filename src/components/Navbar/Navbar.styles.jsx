@@ -12,6 +12,7 @@ export const NavContainer = styled.nav`
   background: #fefefe;
   padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
+  cursor: pointer;
 `;
 
 export const LogoContainer = styled(Link)`
