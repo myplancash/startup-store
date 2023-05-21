@@ -4,7 +4,7 @@ import {
   signInAuthWithEmailAndPassword, 
   signInWithGooglePopup,  
 } from '../../utils/firebase/firebase.utils'
-import Button from '../Button/Button';
+import Button, { BUTTON_CLASSES } from '../Button/Button';
 
 const SignIn = () => {
 
@@ -76,7 +76,7 @@ const SignIn = () => {
         />
         <div className='buttons-container'>
          <Button type='submit'>Sign In</Button>
-         <Button type='button' buttonClass='google' onClick={signInWithGoogle}>Sign In with Google</Button>
+         <Button type='button' buttonClass={BUTTON_CLASSES.google} onClick={signInWithGoogle}>Sign In with Google</Button>
         </div>
       </form>
     </div>

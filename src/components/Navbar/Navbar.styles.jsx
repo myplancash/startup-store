@@ -1,7 +1,7 @@
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Nav = styled.nav` 
+export const NavContainer = styled.nav` 
   height: 70px;
   width: 100%;
   display: flex;
@@ -15,6 +15,7 @@ export const Nav = styled.nav`
 `;
 
 export const LogoContainer = styled(Link)`
+  width: 10%;
   height: 70px;
   padding: 25px;
   cursor: pointer;
@@ -29,17 +30,18 @@ export const LogoContainer = styled(Link)`
 `
 
 export const NavLink = styled(Link)` 
-  justify-content: flex-end;
-  color: #808080;
   display: flex;
+  justify-content: center;
+  color: #808080;
   font-size: .9rem;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
-  cursor: pointer;
   align-self: center;
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
+  cursor: pointer;
+  /* flex: 1 1 auto; */
   /* padding: 10px 15px; */
 
 
@@ -71,11 +73,11 @@ export const Bars=styled(FaBars)`
   }
 `; */
 
-export const NavMenu=styled.div` 
-  width: 50%;
+export const NavMenu=styled.div`
+  width: 90%;
   height: 100%;
   display: flex;
-
+  justify-content: flex-end;
   align-items: center;
   margin-right: -24px;
 

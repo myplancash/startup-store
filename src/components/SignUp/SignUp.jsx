@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils'
 import FormInput from '../FormInput/FormInput'
-import Button from '../Button/Button';
+import Button, {BUTTON_CLASSES} from '../Button/Button';
 import './SignUp.styles.scss';
 
 const initialState = {
@@ -86,7 +86,7 @@ const SignUp = () => {
           onChange={handleChange}
           required
         />
-        <Button buttonClass='google' type='submit'>Submit form</Button>
+        <Button buttonClass={BUTTON_CLASSES.google} type='submit'>Submit form</Button>
       </form>
     </div>
   )

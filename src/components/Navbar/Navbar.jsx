@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef } from 'react';
 import {
-  Nav,
+  NavContainer,
   NavLink,
   LogoContainer,
   NavMenu,
@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Nav>
+      <NavContainer>
         <LogoContainer to='/'>
           <StoreLogo/>
         </LogoContainer>
@@ -43,7 +43,7 @@ const Navbar = () => {
           </NavLink>
           <Authentication>
           { currentUser ? (
-            <NavLink onClick={signOutUser}>
+            <NavLink as="span" onClick={signOutUser}>
               Sign Out
             </NavLink>
           ) : (
@@ -55,7 +55,7 @@ const Navbar = () => {
           <CartIcon />
         </NavMenu>
         { isCartOpen && <CartDropdown />}
-      </Nav>
+      </NavContainer>
       <Outlet />
     </>
   );
