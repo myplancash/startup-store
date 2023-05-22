@@ -5,6 +5,7 @@ import {
   signInWithGooglePopup,  
 } from '../../utils/firebase/firebase.utils'
 import Button, { BUTTON_CLASSES } from '../Button/Button';
+import { SignInContainer, ButtonContainer } from './SignIn.styles.jsx'
 
 const SignIn = () => {
 
@@ -54,7 +55,7 @@ const SignIn = () => {
   }
 
   return (
-    <div className='sign-in-container'>
+    <SignInContainer>
       <h2>Log In</h2>
       <span>Sign In with your email and Password</span>
       <form onSubmit={handleSubmit} action="">
@@ -74,12 +75,12 @@ const SignIn = () => {
           onChange={handleChange}
           required
         />
-        <div className='buttons-container'>
-         <Button type='submit'>Sign In</Button>
-         <Button type='button' buttonClass={BUTTON_CLASSES.google} onClick={signInWithGoogle}>Sign In with Google</Button>
-        </div>
+        <ButtonContainer>
+          <Button type='submit'>Sign In</Button>
+          <Button type='button' buttonClass={BUTTON_CLASSES.google} onClick={signInWithGoogle}>Sign In with Google</Button>
+        </ButtonContainer>
       </form>
-    </div>
+    </SignInContainer>
   )
 }
 
