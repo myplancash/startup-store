@@ -16,21 +16,22 @@ export const BaseButton = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-  text-align: center; /* Centered text */
-  background-color: '#070606'; /* Green background */
+  text-align: center;
+  background-color: '#070606';
 
-  text-decoration: none; /* Remove underline */
-  display: inline-block; /* Display as inline-block element */
+  text-decoration: none; 
+  display: inline-block; 
   font-size: .5rem;
-  border-radius: 8px; /* Rounded corners */
-  transition-duration: 0.4s; /* Transition duration */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add box shadow */
-
+  border-radius: 8px; 
+  transition-duration: 0.4s;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  
   &:hover {
     background-color: white;
     color:#070606;
     border: 1px solid black;
   }
+  
   &:link {
     color: #fafafa;
   }

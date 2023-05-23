@@ -36,7 +36,7 @@ const Navbar = () => {
           <NavLink to='/events' activestyle='true'>
             Blog
           </NavLink>
-          <NavLink to='/annual' activestyle='true'>
+          <NavLink to='/contact' activestyle='true'>
             Contact
           </NavLink>
           <Authentication>
