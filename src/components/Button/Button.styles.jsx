@@ -9,7 +9,6 @@ export const BaseButton = styled.button`
   line-height: 50px;
   padding: 0 1rem 0 1rem;
   font-size: .6rem;
-  background-color: black;
   color: white;
   text-transform: uppercase;
   font-weight: bolder;
@@ -17,7 +16,16 @@ export const BaseButton = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-  
+  text-align: center; /* Centered text */
+  background-color: '#070606'; /* Green background */
+
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Display as inline-block element */
+  font-size: .5rem;
+  border-radius: 8px; /* Rounded corners */
+  transition-duration: 0.4s; /* Transition duration */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add box shadow */
+
   &:hover {
     background-color: white;
     color:#070606;
