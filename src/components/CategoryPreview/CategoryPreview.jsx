@@ -6,7 +6,9 @@ import {CategoryPreviewContainer, Title, Preview} from './CategoryPreview.styles
 const CategoryPreview = ({title, products}) => {
   return (
     <CategoryPreviewContainer>
-      <h1><Title to={title}>{title.toUpperCase()}</Title></h1>      
+      <h1>
+        <Title to={title}>{title.toUpperCase()}</Title> 
+      </h1>     
       <Preview>
         {products
           .filter((_, i) => i < 4)

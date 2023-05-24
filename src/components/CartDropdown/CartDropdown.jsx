@@ -21,7 +21,7 @@ const CartDropdown = () => {
           <EmptyMessage>Your cart is empty</EmptyMessage>
         )}
         <Button 
-          onClick={() => navigate('/checkout')} buttonClass='inverted'
+          onClick={() => navigate('/checkout')} buttonClass='base'
         >GO TO CHECKOUT</Button>      
       </CartItems>
     </CartDropdownContainer>

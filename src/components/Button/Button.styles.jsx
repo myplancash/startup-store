@@ -8,8 +8,8 @@ export const BaseButton = styled.button`
   letter-spacing: 0.5px;
   line-height: 50px;
   padding: 0 1rem 0 1rem;
-  font-size: .6rem;
-  color: white;
+  font-size: 1rem;
+  color: #070606;
   text-transform: uppercase;
   font-weight: bolder;
   border: none;
@@ -17,18 +17,17 @@ export const BaseButton = styled.button`
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: '#070606';
-
+  background-color:#fff;
   text-decoration: none; 
   display: inline-block; 
   font-size: .5rem;
+  border: 1px solid black;
   border-radius: 8px; 
-  transition-duration: 0.4s;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   
   &:hover {
-    background-color: white;
-    color:#070606;
+    background-color: #070606;
+    color:#fff;
     border: 1px solid black;
   }
   
@@ -43,6 +42,7 @@ export const BaseButton = styled.button`
 export const GoogleButton = styled(BaseButton)`
   background-color: #4285f4;
   color: white;
+  border: none;
 
   &:hover {
     background-color: #357ae8;
@@ -51,13 +51,13 @@ export const GoogleButton = styled(BaseButton)`
 `
 
 export const InvertedButton = styled(BaseButton)`
-  background-color:white;
-  color: #070606;
-  border: 1px solid black;
-
+  background-color: #070606;
+  color: #fefefe;
+  border: none;
+  
   &:hover {
-    background-color: black;
-    color: white;
-    border: none;
+    background-color: #fefefe;
+    color: #070606;
+    border: 1px solid black;
   }
 `

@@ -76,7 +76,7 @@ const SignIn = () => {
           required
         />
         <ButtonContainer>
-          <Button buttonClass={BUTTON_CLASSES.base}  type='submit'>Sign In</Button>
+          <Button buttonClass={BUTTON_CLASSES.inverted}  type='submit'>Sign In</Button>
           <Button type='button' buttonClass={BUTTON_CLASSES.google} onClick={signInWithGoogle}>Sign In with Google</Button>
         </ButtonContainer>
       </form>
