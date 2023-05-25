@@ -7,6 +7,8 @@ export const ProductCardContainer = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
+
+  
   
   img {
     width: 100%;
@@ -25,6 +27,8 @@ export const ProductCardContainer = styled.div`
   }
 
   &:hover {
+    /* filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px); */
+
     img {
       opacity: 0.8;
     }
