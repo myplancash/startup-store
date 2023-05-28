@@ -4,14 +4,14 @@ import {CartIconContainer, ShoppingIcon, ItemCount} from './CartIcon.styles.jsx'
 
 const CartIcon = () => {
 
-  const {isCartOpen, setIsCartOpen, cartCount } = useContext(CartContext)
+  const {isCartOpen, setIsCartOpen, cartCount, } = useContext(CartContext)
 
   const handleClick = () => {
     setIsCartOpen(!isCartOpen)
   }
 
   return (
-    <CartIconContainer onClick={handleClick}>
+    <CartIconContainer onClick={handleClick} >
       <ShoppingIcon/>
       <ItemCount>{cartCount}</ItemCount>
     </CartIconContainer>

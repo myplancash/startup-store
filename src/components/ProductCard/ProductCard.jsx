@@ -3,14 +3,18 @@ import Button, {BUTTON_CLASSES} from '../Button/Button';
 import { CartContext } from '../../contexts/cart.context';
 import { ProductCardContainer, Footer } from './ProductCard.styles.jsx';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, ...otherProps }) => {
 
   const { addItemToCart } = useContext(CartContext)
   const { name, imageUrl, price } = product;
 
-  const addProductToCart = () => addItemToCart(product)
 
-  return (
+  const addProductToCart = () => {
+    addItemToCart(product)
+
+  }
+    
+    return (
     <ProductCardContainer>
       <img src={imageUrl} alt={`${name}`} />
       <Footer>

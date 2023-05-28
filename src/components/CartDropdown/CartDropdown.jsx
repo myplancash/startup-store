@@ -12,7 +12,7 @@ const CartDropdown = () => {
   const navigate = useNavigate()
   
   return (
-    <CartDropdownContainer>
+    <CartDropdownContainer >
       <CartItems>
         {cartItems.length ? (
           cartItems.map(cartItem => (

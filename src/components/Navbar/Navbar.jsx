@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useSelector } from 'react-redux'
 import {
   NavContainer,
   NavLink,
@@ -14,14 +15,18 @@ import { CartContext }from '../../contexts/cart.context';
 
 import CartIcon from '../CartIcon/CartIcon';
 import CartDropdown from '../CartDropdown/CartDropdown';
+
+import { selectCurrentUser } from '../../store/user/user.selectors';
   
 const Navbar = () => {
-  const { currentUser } = useContext(UserContext)
+  // const { currentUser } = useContext(UserContext)
   const { isCartOpen } = useContext(CartContext)
   /* const signOutHandler = async () => {
     // onAuthStateChangedListener is going to catch it, so we do not need to: setCurrentUser(null)
     await signOutUser()
    }*/
+
+  const currentUser = useSelector(selectCurrentUser)
 
   return (
     <>

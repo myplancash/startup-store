@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { ReactComponent as ShoppingLogo } from '../../assets/shopping-bag.svg';
 
+
+
 export const CartIconContainer = styled.div`
   width: 45px;
   height: 45px;
@@ -9,6 +11,8 @@ export const CartIconContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  transition: opacity 0.3s ease, transform 0.3s ease; 
 `
 
 export const ShoppingIcon = styled(ShoppingLogo)`

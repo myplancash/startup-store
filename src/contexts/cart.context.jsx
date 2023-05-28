@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useReducer } from 'react';
+import { createContext, useReducer } from 'react';
 
 import {createAction} from '../utils/reducer/reducer.utils'
 
@@ -26,7 +26,6 @@ const addCartItem = (cartItems, productToAdd) => {
   return [...cartItems, {...productToAdd, quantity: 1}]
 }
 
-
 const removeCartItems = (cartItems, cartItemToRemove) => {
   //find the cart Item to remove
   const existingCartItem = cartItems.find(cartItem => cartItem.id === cartItemToRemove.id)
@@ -43,10 +42,6 @@ const removeCartItems = (cartItems, cartItemToRemove) => {
 
 const clearCartItem = (cartItems, cartItemToClear) => cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id)
 
-/* export const CART_ACTION_TYPES = {
-  SET_CURRENT_USER: 'SET_CURRENT_USER',
-} */
-
 export const initialState = {
   isCartOpen: false,  
   cartItems: [],
@@ -56,7 +51,8 @@ export const initialState = {
 
 export const CART_ACTION_TYPES = {
   SET_CART_ITEMS: 'SET_CART_ITEMS',
-  SET_IS_CART_OPEN: 'SET_IS_CART_OPENS'
+  SET_IS_CART_OPEN: 'SET_IS_CART_OPENS',
+  SET_SHOW_CART: 'SET_SHOW_CART',
 }
 
 export const cartReducer = (state, action) => {
@@ -73,6 +69,7 @@ export const cartReducer = (state, action) => {
         ...state,
         isCartOpen: payload,
       }   
+
     default:
       throw new Error(`unhandled type: ${type} from cartReducer`)
   }
@@ -80,7 +77,7 @@ export const cartReducer = (state, action) => {
 
 export const CartProvider = ({ children }) => {
 
-  const [{isCartOpen, cartItems, cartCount, cartTotal}, dispatch] = useReducer(cartReducer, initialState);
+  const [{isCartOpen, cartItems, cartCount, cartTotal }, dispatch] = useReducer(cartReducer, initialState);
 /* 
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [cartItems, setCartItems] = useState([])
@@ -135,6 +132,7 @@ export const CartProvider = ({ children }) => {
   const setIsCartOpen = (bool) => {
     dispatch(createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, bool))
   }
+  
 
   
   const value = { 
