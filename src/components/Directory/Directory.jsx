@@ -3,7 +3,7 @@ import DirectoryItem from '../DirectoryItem/DirectoryItem';
 import { DirectoryContainer } from './Directory.styles.jsx';
 
 
-  const categories = [
+const categories = [
   {
     "id": 1,
     "title": "hats",

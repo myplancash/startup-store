@@ -12,7 +12,9 @@ import {
   onAuthStateChangedListener,
   createUserDocumentFromAuth,
 } from './utils/firebase/firebase.utils';
+
 import { setCurrentUser } from './store/user/user.actions';
+
 
 
 const contactDetails = {
@@ -37,6 +39,8 @@ function App() {
 
     return unsubscribe;
   }, []);
+
+
 
   return (
     <Routes>
